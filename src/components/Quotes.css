@@ -523,10 +523,17 @@
   border: 1px solid red;
  }
  
- .txt {
+ .quote {
    height: 100%;
    display: table-cell;
    vertical-align: middle;
+ }
+
+ .author {
+   position: absolute;
+   bottom: 0rem;
+   right: 0rem;
+   padding: 0 6rem 2rem 0;
  }
  
  a {
