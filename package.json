@@ -4,10 +4,9 @@
   "description": "I'm Rick Jaaaammes bitch, I'm Rick Jaammmmmmes biitch",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "react-scripts test --env=jsdom",
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   },
   "repository": {
@@ -26,7 +25,6 @@
     "axios": "^0.16.2",
     "body-parser": "^1.18.1",
     "express": "^4.15.4",
-    "jquery": "^3.2.1",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
     "react-router-dom": "^4.2.2",

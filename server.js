@@ -53,9 +53,6 @@ app
   //     { image: 'https://files.slack.com/files-tmb/T2VL6JR9C-F763HSZK4-f1d233e788/20170821_140717_1024.jpg' },
   //     { image: 'https://files.slack.com/files-tmb/T2VL6JR9C-F75HQCX7T-1345aaac1b/20170901_233856_1024.jpg' }
   //   ]
-
-
-
   //   res.send({ status: 'SUCCESS', quotesimagesList: quotesimagesList })
   // });
 
