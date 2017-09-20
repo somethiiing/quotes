@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import Axios from 'axios';
 
+import helper from '../lib/Slack';
+
 import './Quotes.css';
 
 
@@ -18,10 +20,20 @@ export class Quotes extends Component {
   }
 
   componentDidMount() {
-    Axios.get('http://localhost:6969/api/quotes')
-    .then( res => {
-      this.setState({ quotes: res.data.quotes });
-      setTimeout(this.changeQuote, 0);
+    // Axios.get('http://localhost:6969/api/quotes')
+    // .then( res => {
+    //   this.setState({ quotes: res.data.quotes });
+    //   this.changeQuote();
+    // })
+    // .catch( err => {
+    //   console.error(err);
+    // });
+
+
+    helper.getSlides()
+    .then( data => {
+      this.setState({ quotes: data.slides.text });
+      this.changeQuote();
     })
     .catch( err => {
       console.error(err);
