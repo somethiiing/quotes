@@ -35,8 +35,29 @@ app
   });
 
   app.get('/api/images', (req, res) => {
-    res.send({status: 'SUCCESS'})
-  })
+    let imagesList = [
+      { image: 'https://files.slack.com/files-tmb/T2VL6JR9C-F7669TLF4-0d8aab112c/20170920_134354_1024.jpg', alt: 'food', author: 'napoli'  },
+      { image: 'https://files.slack.com/files-tmb/T2VL6JR9C-F763J981Y-b4b90392d2/img_20170903_133551_611_1024.jpg', alt: 'car', author: 'another important person' },
+      { image: 'https://files.slack.com/files-tmb/T2VL6JR9C-F763HSZK4-f1d233e788/20170821_140717_1024.jpg', alt: 'eclipse party', author: 'someone important' },
+      { image: 'https://files.slack.com/files-tmb/T2VL6JR9C-F75HQCX7T-1345aaac1b/20170901_233856_1024.jpg', alt: 'Try to learn something about everything and everything about something.', author: 'pboggs' }
+    ];
+
+    res.send({ status: 'SUCCESS', images: imagesList });
+  });
+
+  // app.get('/api/quotesimages', (req, res) => {
+  //   let quotesimagesList = [
+  //     { image: 'https://files.slack.com/files-tmb/T2VL6JR9C-F7669TLF4-0d8aab112c/20170920_134354_1024.jpg' },
+  //     { image: 'https://files.slack.com/files-tmb/T2VL6JR9C-F77304V54-3e01e51c71/20170920_134403_1024.jpg' },
+  //     { image: 'https://files.slack.com/files-tmb/T2VL6JR9C-F763J981Y-b4b90392d2/img_20170903_133551_611_1024.jpg' },
+  //     { image: 'https://files.slack.com/files-tmb/T2VL6JR9C-F763HSZK4-f1d233e788/20170821_140717_1024.jpg' },
+  //     { image: 'https://files.slack.com/files-tmb/T2VL6JR9C-F75HQCX7T-1345aaac1b/20170901_233856_1024.jpg' }
+  //   ]
+
+
+
+  //   res.send({ status: 'SUCCESS', quotesimagesList: quotesimagesList })
+  // });
 
 
 

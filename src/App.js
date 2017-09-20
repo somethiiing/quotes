@@ -23,11 +23,9 @@ class App extends Component {
   render() {
     return (
       <Router>
-        <div>
+        <div className="main">
 
-          <Route exact path="/" render={() => (
-            <Quotes quotes={ this.state.quotes }/>
-          )}/>
+          <Route exact path="/" component={Quotes}/>
           <Route path="/quotes" component={Quotes}/>
           <Route path="/images" component={Images}/>
           <Route path="/quotesimages" component={QuotesImages}/>

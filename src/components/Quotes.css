@@ -499,51 +499,78 @@
  #root, #root > div {
    height: 100%;
  }
+
  #root > div {
    display: table;
    width: 100%;
- }
- body {
-   background-color: #1a1a1a;
-   color: #fefefe;
-   font-family: 'Ubuntu';
-   text-transform: uppercase;
-   letter-spacing: 0.2em;
-   font-size: 1.3em;
-   line-height: 2;
-   font-weight: 300;
-   text-rendering: optimizeLegibility;
-   text-align: center;
-   height: 100%;
- }
- 
- .container {
-  height: 100%;
-  display: table-row;
-  border: 1px solid red;
- }
- 
- .quote {
-   height: 100%;
-   display: table-cell;
-   vertical-align: middle;
- }
+  }
 
- .author {
-   position: absolute;
-   bottom: 0rem;
-   right: 0rem;
-   padding: 0 6rem 2rem 0;
- }
- 
- a {
-   text-decoration: none;
-   position: absolute;
-   bottom: 10px;
-   right: 10px;
-   text-align: right;
-   color: #eee;
-   font-size: 15px;
-   line-height: 15px;
- }
- 
+  
+  body {
+    background-color: #333;
+    color: #f2f2f2;
+    font-family: 'Ubuntu';
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    font-size: 1.3em;
+    line-height: 2;
+    font-weight: 300;
+    text-rendering: optimizeLegibility;
+    text-align: center;
+    height: 100%;
+  }
+
+  .container {
+    height: 100%;
+    display: table-row;
+    border: 1px solid red;
+  }
+
+  .quote {
+    height: 100%;
+    display: table-cell;
+    vertical-align: middle;
+  }
+
+  .author {
+    position: absolute;
+    bottom: 0rem;
+    right: 0rem;
+    padding: 0 6rem 2rem 0;
+  }
+
+  .imageOnly {
+    margin: 2.5% auto;
+    height: 90%;
+    display: table-cell;
+    vertical-align: middle;
+  }
+
+  .imageText {
+    position: absolute;
+    bottom: 0rem;
+    right: 0rem;
+    padding: 0 6rem 2rem 0;
+  }
+
+  .main .imageText{
+    margin: 0 auto;
+    position: static;
+    padding: 0 10%;
+    text-align: center;
+  }
+
+  .main .imageOnly{
+    height: 80%;
+  }
+
+  a {
+    text-decoration: none;
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    text-align: right;
+    color: #eee;
+    font-size: 15px;
+    line-height: 15px;
+  }
