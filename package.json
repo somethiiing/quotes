@@ -1,0 +1,23 @@
+{
+  "name": "rickjames",
+  "version": "1.0.0",
+  "description": "I'm Rick Jaaaammes bitch, I'm Rick Jaammmmmmes biitch",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/avidus3r/rickjames.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/avidus3r/rickjames/issues"
+  },
+  "homepage": "https://github.com/avidus3r/rickjames#readme",
+  "devDependencies": {
+    "dotenv": "latest",
+    "request": "^2.82.0"
+  }
+}
