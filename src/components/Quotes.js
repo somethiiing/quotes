@@ -37,8 +37,8 @@ export class Quotes extends Component {
 
   render () {
     return (
-      <div class="container">
-        <span class="txt anim-text-flow">"{this.state.displayedQuote.quote}" -{this.state.displayedQuote.author}</span>
+      <div className="container">
+        <p className="txt anim-text-flow">"{this.state.displayedQuote.quote}" -{this.state.displayedQuote.author}</p>
       </div>
     );
   }
