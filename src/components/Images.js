@@ -7,6 +7,7 @@ export class Images extends Component {
     super(props);
     this.state = {
       images: [],
+      counter: 0,
       displayedImage: {image: 'http://www.jqueryscript.net/images/Custom-Loading-Indicator-Plugin-with-jQuery-Font-Awesome-faloading.jpg', alt: 'loading...', author: 'test dude' }
     };
 
@@ -36,8 +37,12 @@ export class Images extends Component {
   }
 
   changeImage() {
-    let random = this.state.images[Math.floor(Math.random()*this.state.images.length)];
-    this.setState({displayedImage: random });
+    // let random = this.state.images[Math.floor(Math.random()*this.state.images.length)];
+    // this.setState({displayedImage: random });
+
+
+    let counter = this.state.counter++;
+    this.setState({ displayedImage: this.state.images[counter]});
 
     setTimeout(this.changeImage, 5000);
   }

@@ -1,8 +1,11 @@
 let rickJames = require('./RickJames');
 
 let Slack = {
-  getSlides: function() {
+  getSlides: () => {
     return rickJames.getChannelMessages();
+  },
+  getUserList: () => {
+    return rickJames.getUserList();
   }
 };
 
