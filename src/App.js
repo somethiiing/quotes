@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Quotes, Images, QuotesImages } from './components/index';
+import { Quotes, Images, QuotesImages, Random } from './components/index';
 
 import {
   BrowserRouter as Router,
@@ -28,6 +28,7 @@ class App extends Component {
           <Route exact path="/" component={Quotes}/>
           <Route path="/quotes" component={Quotes}/>
           <Route path="/images" component={Images}/>
+          <Route path="/random" component={Random}/>
           <Route path="/quotesimages" component={QuotesImages}/>
         </div>
       </Router>

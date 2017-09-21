@@ -64,7 +64,7 @@ export class Quotes extends Component {
     return (
       <div className="container">
         <h1 className="quote anim-text-flow">"{this.state.displayedQuote.quote}"</h1>
-        <h1 className="author">- {this.state.users[this.state.displayedQuote.author]}</h1>
+        <h1 className="author">{this.state.users[this.state.displayedQuote.author]}</h1>
       </div>
     );
   }
