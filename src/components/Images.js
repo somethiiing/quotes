@@ -3,6 +3,8 @@ import Axios from 'axios';
 import helper from '../lib/Slack';
 
 export class Images extends Component {
+  counter = 0;
+
   constructor(props) {
     super(props);
     this.state = {
@@ -15,19 +17,8 @@ export class Images extends Component {
   }
 
   componentDidMount () {
-    // Axios.get('http://localhost:6969/api/images')
-    // .then( res => {
-    //   console.log(res.data);
-    //   this.setState({ images: res.data.images });
-    //   this.changeImage();
-    // })
-    // .catch( err => {
-    //   console.error(err);
-    // })
-
     helper.getSlides()
     .then( data => {
-      console.log(data.slides.images);
       this.setState({ images: data.slides.images });
       this.changeImage();
     })
@@ -36,14 +27,16 @@ export class Images extends Component {
     })
   }
 
+  counterUpdater() {
+
+  }
+
   changeImage() {
-    // let random = this.state.images[Math.floor(Math.random()*this.state.images.length)];
-    // this.setState({displayedImage: random });
-
-
-    let counter = this.state.counter++;
-    this.setState({ displayedImage: this.state.images[counter]});
-
+    this.counter = this.counter + 1;
+    if (this.counter > this.state.images.length - 1) {
+      this.counter = 0;
+    }
+    this.setState({ displayedImage: this.state.images[this.counter]});
     setTimeout(this.changeImage, 5000);
   }
 

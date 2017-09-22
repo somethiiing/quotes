@@ -3,6 +3,7 @@ const app = express();
 const bodyParser = require('body-parser');
 const path = require('path');
 const TheDude = require('./lib/TheDude');
+const backfires = require('./lib/BackFires');
 
 
 // app setup
@@ -20,19 +21,37 @@ app
 
   app.get('/api/', (req, res) => {
     res.send('Health Check: 200');
-  })
+  });
 
   app.get('/api/cats', (req, res) => {
     TheDude.getCats()
-    .then((result) => {
+    .then(result => {
       res.send(result);
     })
-  })
+  });
 
-  app.get('/api/dude/quotes', (req, res) => {
+  app.get('/api/dude', (req, res) => {
     TheDude.getQuotes()
-    .then((result) => {
+    .then( data => {
+      let result = data.map( item => {
+        return item[0][0].text;
+      })
       res.send(result);
+    })
+  });
+
+
+  app.get('/api/backfires/images', (req, res) => {
+    backfires.getImages()
+      .then( data => {
+        res.send(data);
+      })
+  });
+
+  app.get('/api/backfires/quotes', (req, res) => {
+    backfires.getComments()
+    .then( data => {
+      res.send(data);
     })
   })
 
