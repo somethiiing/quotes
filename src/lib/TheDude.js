@@ -16,26 +16,39 @@ let TheDude = {
       return images;
     });
   },
-  getQuotes: function() {
+  _getQuotes: function() {
     let theDude = this;
     let quotes = [];
     return new Promise((resolve, reject) => {
-      for(let i = 0; i < 19; i++) {
-        request.get(theDude.endpoint, (error, res, body) => {
-          if(error) reject(error);
-          let resp = JSON.parse(body);
-          quotes.push(resp.quote.lines.filter(el => el.text = wordFilter.clean(el.text)));
-        });
-        if(i === 19) {
-          resolve(quotes);
-        }
-      }
+      request.get(theDude.endpoint, (error, res, body) => {
+        if(error) reject(error);
+        let resp = JSON.parse(body);
+        quotes.push(resp.quote.lines.filter(el => el.text = wordFilter.clean(el.text)));
+        resolve(quotes);
+      });
+    });
+  },
+  getQuotes: function() {
+    let promises = [];
+    let quotes = [];
+    for(let i = 0; i < 19; i++) {
+      promises.push(new Promise((resolve, reject) => {
+        this.getQuotes().then(res => {
+          console.log(res);
+          resolve(res);
+        })
+      }));
+    }
+    Promise.all(promises,(res) => {
+      console.log(res);
     });
   }
 };
-/*
-TheDude.getQuotes().then((res) => {
+
+/*TheDude.getQuotes().then((res) => {
   console.log(res);
 });
 */
+
+console.log(TheDude.getCats());
 module.exports = TheDude;
