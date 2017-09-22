@@ -2,6 +2,7 @@ const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
 const path = require('path');
+const TheDude = require('./src/lib/TheDude');
 
 
 // app setup
@@ -21,6 +22,18 @@ app
     res.send('Health Check: 200');
   })
 
+  app.get('/api/dude/cats', (req, res) => {
+    TheDude.getCats().then((result) => {
+      res.send(result);
+    })
+  })
+
+  app.get('/api/dude/quotes', (req, res) => {
+    TheDude.getQuotes().then((result) => {
+      res.send(result);
+    })
+  })
+  
   app.get('/api/quotes', (req, res) => {
     let quotesList = [
       { quote: 'The first step in fixing the world is accepting it.', author: 'Wilson' },
