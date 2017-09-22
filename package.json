@@ -20,15 +20,16 @@
   },
   "homepage": "https://github.com/avidus3r/rickjames#readme",
   "devDependencies": {
-    "dotenv": "latest",
-    "request": "^2.82.0",
     "axios": "^0.16.2",
     "body-parser": "^1.18.1",
+    "dotenv": "latest",
     "express": "^4.15.4",
+    "leo-profanity": "^1.2.4",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
     "react-router-dom": "^4.2.2",
-    "react-scripts": "1.0.13"
+    "react-scripts": "1.0.13",
+    "request": "^2.82.0"
   },
   "dependencies": {}
 }
