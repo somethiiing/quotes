@@ -25,6 +25,7 @@
     "dotenv": "latest",
     "express": "^4.15.4",
     "leo-profanity": "^1.2.4",
+    "mongo": "^0.1.0",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
     "react-router-dom": "^4.2.2",
