@@ -81,7 +81,7 @@ app
 
 
 
-app.listen(6969, () => {
+app.listen(80, () => {
   console.log('listening on port 6969')
 });
 
