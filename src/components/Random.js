@@ -18,15 +18,15 @@ export class Random extends Component {
   }
 
   componentDidMount () {
-    // Axios.get('http://localhost:6969/api/images')
-    // .then( res => {
-    //   console.log(res.data);
-    //   this.setState({ images: res.data.images });
-    //   this.changeImage();
-    // })
-    // .catch( err => {
-    //   console.error(err);
-    // })
+    Axios.get('http://localhost:6969/api/cats')
+    .then( res => {
+      console.log(res.data);
+      this.setState({ images: res.data });
+      this.changeImage();
+    })
+    .catch( err => {
+      console.error(err);
+    })
 
     // helper.getSlides()
     // .then( data => {
@@ -38,10 +38,10 @@ export class Random extends Component {
     //   console.error(err);
     // })
 
-    this.setState({ images: cat.images});
+    // this.setState({ images: cat.images});
 
     // leave settimeout. setState is asynchronous. page will crash
-    setTimeout(this.changeImage, 0);
+    // setTimeout(this.changeImage, 0);
 
   }
 
