@@ -6,7 +6,7 @@ import helper from '../lib/Slack';
 import cat from '../Data/catAPI';
 
 export class Random extends Component {
-  api = 'http://localhost:6969';
+  api = 'https://enigmatic-earth-81079.herokuapp.com';
 
   constructor(props) {
     super(props);

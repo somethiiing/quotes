@@ -80,8 +80,14 @@ app
   });
 
 
+  app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, './build/index.html'));
+  });
 
-app.listen(80, () => {
-  console.log('listening on port 6969')
-});
 
+  const port = process.env.PORT || '3000';
+  app.set('port', port);
+
+  app.listen(port, () => {
+    console.log(`Listening on port: ${port}`);
+  });
