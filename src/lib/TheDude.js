@@ -18,8 +18,8 @@ let TheDude = {
   },
   _getQuotes: function() {
     let theDude = this;
-    let quotes = [];
     return new Promise((resolve, reject) => {
+      let quotes = [];
       request.get(theDude.endpoint, (error, res, body) => {
         if(error) reject(error);
         let resp = JSON.parse(body);
@@ -32,23 +32,16 @@ let TheDude = {
     let promises = [];
     let quotes = [];
     for(let i = 0; i < 19; i++) {
-      promises.push(new Promise((resolve, reject) => {
-        this.getQuotes().then(res => {
-          console.log(res);
-          resolve(res);
-        })
-      }));
+      promises.push(this._getQuotes());
     }
-    Promise.all(promises,(res) => {
-      console.log(res);
-    });
+    return Promise.all(promises);
   }
 };
 
-/*TheDude.getQuotes().then((res) => {
-  console.log(res);
+TheDude.getQuotes().then((res) => {
+  res.forEach((item) => {
+    console.log(item);
+  })
 });
-*/
 
-console.log(TheDude.getCats());
 module.exports = TheDude;
